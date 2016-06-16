@@ -3,15 +3,16 @@ var fs = require('fs'),
     exec = require('child_process').exec,
     connect = require('gulp-connect'),
     browserify = require('browserify'),
-    less      = require('gulp-less'),
-    livereload = require('gulp-livereload');
+    less      = require('gulp-less');
+    // livereload = require('gulp-livereload');
 
 
 gulp.task('connect', function() {
     connect.server({
 	root: "www",
 	host: "0.0.0.0",
-	port: 8001
+	port: 8001,
+	livereload: false
     });
 });
 
