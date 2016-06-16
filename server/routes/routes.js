@@ -6,8 +6,6 @@ var morgan         = require('morgan'),
     session        = require('express-session'),
     security       = require('../lib/security'),
     debug          = require('../lib/debug'),
-    files          = require('../controllers/files'),
-
 
     multiparty = require('connect-multiparty'),
     multipartyMiddleware = multiparty();
