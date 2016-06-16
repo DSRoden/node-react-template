@@ -1,0 +1,159 @@
+@import url(https://fonts.googleapis.com/css?family=Biryani);
+body {
+  background-color: #1385e5;
+}
+.row {
+  margin-right: -15px ! important;
+  margin-left: -15px ! important;
+}
+#fixedBackground {
+  position: fixed;
+  width: 100%;
+  background-size: cover;
+  background-position: 0px 0px;
+  background-repeat: no-repeat;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+}
+#dateForm .flower {
+  position: absolute;
+  top: 35%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  height: 50px;
+  width: 50px;
+  background-image: url('../assets/flower.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#dateForm .cant-wait {
+  position: absolute;
+  text-align: center;
+  color: white;
+  top: 40%;
+  left: 0;
+  right: 0;
+  font-family: Helvetica;
+  font-weight: bold;
+  max-width: 300px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+#dateForm .cant-wait::before {
+  position: absolute;
+  left: -40px;
+  height: 50px;
+  width: 50px;
+  background-image: url('../assets/flower.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#dateForm .meeting-details {
+  margin-top: 60px;
+  text-align: center;
+  color: #1385e5;
+  font-size: 20px;
+  font-family: Helvetica;
+}
+#dateForm .message {
+  border: 2px solid #1385e5;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  color: #1385e5;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 5px;
+}
+#dateForm .cancel-btn {
+  margin-right: -15px;
+  text-align: center;
+  padding: 5px;
+  float: right;
+  width: 100px;
+  height: 30px;
+  color: white;
+  font-weight: bold;
+  font-family: Helvetica;
+  background: #1385e5;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border: 1px solid white;
+}
+#dateForm .send-btn {
+  margin-left: -15px;
+  text-align: center;
+  padding: 5px;
+  float: left;
+  width: 100px;
+  height: 30px;
+  color: white;
+  font-weight: bold;
+  font-family: Helvetica;
+  background: #1385e5;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border: 1px solid white;
+}
+#dateForm .cancel-btn:hover {
+  background: #ccc;
+}
+#dateForm .send-btn:hover {
+  background: #ccc;
+}
+#dateForm .greeting {
+  margin-top: 60px;
+  margin-bottom: 5px;
+  font-size: 30px;
+  text-align: center;
+  font-family: Helvetica;
+  color: #1385e5;
+}
+#dateForm .where {
+  text-align: center;
+  color: #1385e5;
+  font-size: 20px;
+  font-weight: bold;
+}
+#dateForm .when {
+  text-align: center;
+  color: #1385e5;
+  font-size: 20px;
+  font-weight: bold;
+}
+#dateForm .geosuggest-input {
+  max-width: 600px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+#dateForm .date-form .m-input-moment {
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+#dateForm *,
+#dateForm *:before,
+#dateForm *:after {
+  box-sizing: border-box;
+}
+#dateForm .date-input {
+  text-align: center;
+}
+#dateForm .date-input input {
+  padding: 7px 8px;
+  font-size: 20px;
+  width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Helvetica';
+  font-weight: bold;
+  text-align: center;
+  border: none;
+}

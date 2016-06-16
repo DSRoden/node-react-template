@@ -1,0 +1,192 @@
+@import url(https://fonts.googleapis.com/css?family=Biryani);
+@heroHeight : 590px;
+@themeWhite : #f9fbfb;
+@themeOrange : #df7055;
+@themeGray : #fafdfc;
+@textColor : #363636;
+@blue : #1385e5;
+@themeBlack : #07090f;
+@headFont : 'Biryani', 'Helvetica', 'sans-serif';
+@bodyFont : 'Biryani', 'Helvetica', 'sans-serif';
+// #ff5205
+// bootstrap
+
+body {
+	background-color: @blue;
+}
+@media (max-width: 414px) {
+    @heroHeight: 400px;
+}
+
+.row {
+	margin-right: -15px ! important;
+	margin-left: -15px ! important;
+}
+
+#fixedBackground {
+	position: fixed;
+	width: 100%;
+	// background-image: url("../assets/");
+	background-size: cover;
+	background-position: 0px 0px;
+	background-repeat: no-repeat;
+	z-index: -1;
+	top: 0;
+	bottom: 0;
+}
+
+#dateForm {
+	.flower {
+		position: absolute;
+		top: 35%;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		left: 0;
+		right: 0;
+		height: 50px;
+		width: 50px;
+		background-image: url('../assets/flower.png');
+		background-size: contain;
+		background-repeat: no-repeat;
+	}
+	.cant-wait {
+		position: absolute;
+		text-align: center;
+		color: white;
+		top: 40%;
+		left: 0;
+		right: 0;
+		font-family: Helvetica;
+		font-weight: bold;
+		max-width: 300px;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.cant-wait::before{
+		position: absolute;
+		left: -40px;
+		height: 50px;
+		width: 50px;
+		background-image: url('../assets/flower.png');
+		background-size: contain;
+		background-repeat: no-repeat;
+
+	}
+	.meeting-details {
+		margin-top: 60px;
+		text-align: center;
+		color: @blue;
+		font-size: 20px;
+		font-family: Helvetica;
+	}
+	.message {
+		border: 2px solid @blue;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		color: @blue;
+		border-radius: 5px;
+		padding: 10px;
+		margin-bottom: 5px;
+	}
+	.cancel-btn {
+		margin-right: -15px;
+		text-align: center;
+		padding: 5px;
+		float: right;
+		width: 100px;
+		height:30px;
+		color: white;
+		font-weight: bold;
+		font-family: Helvetica;
+		background: @blue;
+		border-top-left-radius: 5px;
+		border-bottom-left-radius: 5px;
+		border: 1px solid white;
+	}
+	.send-btn {
+		margin-left: -15px;
+		text-align: center;
+		padding: 5px;
+		float: left;
+		width: 100px;
+		height: 30px;
+		color: white;
+		font-weight: bold;
+		font-family: Helvetica;
+		background: @blue;
+		border-top-right-radius: 5px;
+		border-bottom-right-radius: 5px;
+		border: 1px solid white;
+
+	}
+	.cancel-btn:hover {
+		background: #ccc;
+	}
+	.send-btn:hover {
+		background: #ccc;
+	}
+	.greeting {
+		margin-top: 60px;
+		margin-bottom: 5px;
+		font-size: 30px;
+		text-align: center;
+		font-family: Helvetica;
+		color: @blue;
+	}
+	.where {
+		text-align: center;
+		color: @blue;
+		font-size: 20px;
+		font-weight: bold;
+	}
+	.when {
+		text-align: center;
+		color: @blue;
+		font-size: 20px;
+		font-weight: bold;
+	}
+	.geosuggest-input {
+		max-width: 600px;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.date-form {
+		.m-input-moment {
+			display: block !important;
+			margin-left: auto !important;
+			margin-right: auto !important;
+		}
+	}
+
+	*, *:before, *:after {
+	  box-sizing: border-box;
+	}
+
+  .date-input {
+    text-align: center;
+	  input {
+	    padding: 7px 8px;
+	    font-size: 20px;
+	    width: 100%;
+	    display: block;
+	    margin-left: auto;
+	    margin-right: auto;
+	    font-family: 'Helvetica';
+	    font-weight: bold;
+	   	text-align: center;
+	   	border: none;
+	  }
+  }
+
+
+}
+
+
+
+
+
+
