@@ -6,6 +6,8 @@ var ReactDOM = require("react-dom");
 var moment = require('moment');
 var InputMoment = require('input-moment')
 var Geosuggest = require('react-geosuggest').default;
+var Send = require('../models/send').Send;
+
 var LandingPage = React.createClass({
     getInitialState() {
         return {
@@ -43,18 +45,15 @@ var LandingPage = React.createClass({
     },
     send: function(){
         console.log(this.refs.message.value);
-        var mail = "mailto:dsroden25@gmail.com?subject=New Mail&body=Mail text body";  
-        var mlink = document.createElement('a');
-        mlink.setAttribute('href', mail);
-        mlink.click();
+        var message = {};
+        message.content = this.refs.message.value;
+        message.time = this.state.time;
+        message.location = this.state.location;
+        Send.sendMessage(message);
     },
     render: function() {
 	return (
 			<div id="dateForm">
-                <div className="flower"></div>
-                <div>
-                    <h2 className="cant-wait">Can't wait to see you again</h2>
-                </div>
                 <div id="send" style={{'display' : 'none'}}>
                     <div className="row meeting-details">
                         <div className="col-xs-12">
@@ -82,7 +81,7 @@ var LandingPage = React.createClass({
                         <div className="col-sm-4"></div>
                     </div>
                 </div>
-                <div id="fill" style={{'display' : 'none'}}>
+                <div id="fill">
                    <div>
                     <div className="container-fluid greeting">
                         <div> Can I see you again? </div>

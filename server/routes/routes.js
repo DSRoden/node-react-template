@@ -6,7 +6,7 @@ var morgan         = require('morgan'),
     session        = require('express-session'),
     security       = require('../lib/security'),
     debug          = require('../lib/debug'),
-
+    mail           = reaquire('../lib/mail'),
     multiparty = require('connect-multiparty'),
     multipartyMiddleware = multiparty();
 
@@ -21,6 +21,7 @@ module.exports = function(app, express){
 
   // app.use(security.authenticate);
   app.use(debug.info);
+  app.post('/api/1/send', mail.send);
   //console.log('Express: Routes Loaded');
 };
 

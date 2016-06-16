@@ -2,7 +2,9 @@ var _ = require('underscore');
 
 var AppConstants = {
     LANDING_PAGE: "landing_page",
-    APPLY_PAGE: "apply_page"
+    APPLY_PAGE: "apply_page",
+
+    SEND_SUCCESS: "send_success"
 };
 
 AppConstants.DEBUG = false;

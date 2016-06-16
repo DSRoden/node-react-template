@@ -37611,14 +37611,16 @@ require("./models/app");
 require("./views/App.react");
 require("./routes");
 
-},{"./constants":189,"./dispatcher":191,"./models/app":192,"./routes":193,"./views/App.react":195,"backbone":1,"jquery":8}],189:[function(require,module,exports){
+},{"./constants":189,"./dispatcher":191,"./models/app":192,"./routes":194,"./views/App.react":196,"backbone":1,"jquery":8}],189:[function(require,module,exports){
 "use strict";
 
 var _ = require('underscore');
 
 var AppConstants = {
     LANDING_PAGE: "landing_page",
-    APPLY_PAGE: "apply_page"
+    APPLY_PAGE: "apply_page",
+
+    SEND_SUCCESS: "send_success"
 };
 
 AppConstants.DEBUG = false;
@@ -37632,8 +37634,8 @@ module.exports = AppConstants;
 "use strict";
 
 module.exports = {
-    DEBUG: false,
-    HOST: "metaphorsformedicine.com"
+    DEBUG: true,
+    HOST: "localhost:4000"
 };
 
 },{}],191:[function(require,module,exports){
@@ -37660,6 +37662,38 @@ var _exports = {};
 module.exports = _exports;
 
 },{"underscore":187}],193:[function(require,module,exports){
+"use strict";
+
+var _ = require("underscore");
+var Backbone = require("backbone");
+
+var AppConstants = require("../constants");
+var AppDispatcher = require("../dispatcher");
+var getPath = require("../utils").getPath;
+
+var Send = Backbone.Model.extend({
+				sendMessage: function sendMessage(message) {
+								var $this = this;
+								// headers["Content-Type"] = "application/x-www-form-urlencoded";
+								$.ajax({
+												url: getPath("/api/1/send/"),
+												type: "POST",
+												// TODO: Remove the hardcoding for other types of choices
+												data: { "message": message },
+												// headers: headers,
+												success: function success(data, status, jqXHR) {
+																AppDispatcher.trigger(AppConstants.SEND_SUCCESS);
+												},
+												error: function error(jqXHR, status, _error) {}
+								});
+				}
+});
+
+module.exports = {
+				Send: new Send()
+};
+
+},{"../constants":189,"../dispatcher":191,"../utils":195,"backbone":1,"underscore":187}],194:[function(require,module,exports){
 "use strict";
 
 var _ = require("underscore");
@@ -37693,7 +37727,7 @@ window.router = router;
 
 module.exports = router;
 
-},{"./constants":189,"./dispatcher":191,"backbone":1,"react":186,"underscore":187}],194:[function(require,module,exports){
+},{"./constants":189,"./dispatcher":191,"backbone":1,"react":186,"underscore":187}],195:[function(require,module,exports){
 "use strict";
 
 var AppConstants = require("./constants");
@@ -37706,7 +37740,7 @@ module.exports.getPath = function (path) {
     return module.exports.getHostName() + path;
 };
 
-},{"./constants":189}],195:[function(require,module,exports){
+},{"./constants":189}],196:[function(require,module,exports){
 "use strict";
 
 var _ = require("underscore");
@@ -37719,7 +37753,7 @@ _.extend(_exports, require("./Landing.react"));
 
 module.exports = _exports;
 
-},{"./Landing.react":196,"underscore":187}],196:[function(require,module,exports){
+},{"./Landing.react":197,"underscore":187}],197:[function(require,module,exports){
 "use strict";
 
 var AppConstants = require("../constants");
@@ -37730,6 +37764,8 @@ var ReactDOM = require("react-dom");
 var moment = require('moment');
 var InputMoment = require('input-moment');
 var Geosuggest = require('react-geosuggest').default;
+var Send = require('../models/send').Send;
+
 var LandingPage = React.createClass({
     displayName: "LandingPage",
     getInitialState: function getInitialState() {
@@ -37769,13 +37805,14 @@ var LandingPage = React.createClass({
     },
     send: function send() {
         console.log(this.refs.message.value);
-        var mail = "mailto:dsroden25@gmail.com?subject=New Mail&body=Mail text body";
-        var mlink = document.createElement('a');
-        mlink.setAttribute('href', mail);
-        mlink.click();
+        var message = {};
+        message.content = this.refs.message.value;
+        message.time = this.state.time;
+        message.location = this.state.location;
+        Send.sendMessage(message);
     },
     render: function render() {
-        return React.createElement("div", { id: "dateForm" }, React.createElement("div", { className: "flower" }), React.createElement("div", null, React.createElement("h2", { className: "cant-wait" }, "Can't wait to see you again")), React.createElement("div", { id: "send", style: { 'display': 'none' } }, React.createElement("div", { className: "row meeting-details" }, React.createElement("div", { className: "col-xs-12" }, React.createElement("div", null, " Place: ", this.state.location, " "), React.createElement("div", null, " Time: ", this.state.time, " "))), React.createElement("div", { className: "row" }, React.createElement("div", { className: "col-xs-12" }, React.createElement("textarea", { autofocus: true, className: "message", cols: "50", rows: "10", ref: "message", placeholder: "Leave a metaphor!" }))), React.createElement("div", { className: "row" }, React.createElement("div", { className: "col-sm-4" }), React.createElement("div", { className: "col-xs-12 col-sm-4" }, React.createElement("div", { className: "row" }, React.createElement("div", { className: "col-xs-6" }, React.createElement("div", { className: "cancel-btn", onClick: this.clear }, " Cancel :( ")), React.createElement("div", { className: "col-xs-6" }, React.createElement("div", { className: "send-btn", onClick: this.send }, " Send :) ")))), React.createElement("div", { className: "col-sm-4" }))), React.createElement("div", { id: "fill", style: { 'display': 'none' } }, React.createElement("div", null, React.createElement("div", { className: "container-fluid greeting" }, React.createElement("div", null, " Can I see you again? "))), React.createElement("div", null, React.createElement("div", { className: "row" }, React.createElement("div", { className: "col-xs-12 where" }, " Where? "))), React.createElement("div", { className: "geosuggest-input" }, React.createElement(Geosuggest, {
+        return React.createElement("div", { id: "dateForm" }, React.createElement("div", { id: "send", style: { 'display': 'none' } }, React.createElement("div", { className: "row meeting-details" }, React.createElement("div", { className: "col-xs-12" }, React.createElement("div", null, " Place: ", this.state.location, " "), React.createElement("div", null, " Time: ", this.state.time, " "))), React.createElement("div", { className: "row" }, React.createElement("div", { className: "col-xs-12" }, React.createElement("textarea", { autofocus: true, className: "message", cols: "50", rows: "10", ref: "message", placeholder: "Leave a metaphor!" }))), React.createElement("div", { className: "row" }, React.createElement("div", { className: "col-sm-4" }), React.createElement("div", { className: "col-xs-12 col-sm-4" }, React.createElement("div", { className: "row" }, React.createElement("div", { className: "col-xs-6" }, React.createElement("div", { className: "cancel-btn", onClick: this.clear }, " Cancel :( ")), React.createElement("div", { className: "col-xs-6" }, React.createElement("div", { className: "send-btn", onClick: this.send }, " Send :) ")))), React.createElement("div", { className: "col-sm-4" }))), React.createElement("div", { id: "fill" }, React.createElement("div", null, React.createElement("div", { className: "container-fluid greeting" }, React.createElement("div", null, " Can I see you again? "))), React.createElement("div", null, React.createElement("div", { className: "row" }, React.createElement("div", { className: "col-xs-12 where" }, " Where? "))), React.createElement("div", { className: "geosuggest-input" }, React.createElement(Geosuggest, {
             onSuggestSelect: this.onSuggestSelect,
             onFocus: this.onFocus,
             onBlur: this.onBlur,
@@ -37798,4 +37835,4 @@ AppDispatcher.on(AppConstants.LANDING_PAGE, function () {
     ReactDOM.render(React.createElement(LandingPage, null), main);
 });
 
-},{"../constants":189,"../dispatcher":191,"../utils":194,"input-moment":4,"moment":19,"react":186,"react-dom":21,"react-geosuggest":22}]},{},[188]);
+},{"../constants":189,"../dispatcher":191,"../models/send":193,"../utils":195,"input-moment":4,"moment":19,"react":186,"react-dom":21,"react-geosuggest":22}]},{},[188]);
