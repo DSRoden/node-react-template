@@ -1,4 +1,4 @@
 module.exports = {
     DEBUG: false,
-    HOST: "localhost:8001"
+    HOST: "metaphorsformedicine.com"
 }
