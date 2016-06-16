@@ -37633,7 +37633,7 @@ module.exports = AppConstants;
 
 module.exports = {
     DEBUG: false,
-    HOST: "localhost:8001"
+    HOST: "54.235.229.113"
 };
 
 },{}],191:[function(require,module,exports){
