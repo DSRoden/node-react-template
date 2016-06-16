@@ -10,8 +10,7 @@
     "url": ""
   },
   "scripts": {
-    "start": "node server/index.js",
-    "postinstall": "grunt deploy"
+    "start": "node server/index.js"
   },
   "author": "DSRoden <daniel.s.roden@gmail.com>",
   "license": "",
