@@ -17,6 +17,7 @@ var Landing = React.createClass({
                     <div className="col-xs-12">
                         <div id="flower"></div>
                         <div id="flower2"></div>
+                        <div id="new"></div>
                     </div>
                 </div>
                 <div className="row text">

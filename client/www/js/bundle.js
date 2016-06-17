@@ -169,7 +169,7 @@ var Landing = React.createClass({
     displayName: "Landing",
 
     render: function render() {
-        return React.createElement("div", { id: "landing" }, React.createElement("div", { className: "row drawings" }, React.createElement("div", { className: "col-xs-12" }, React.createElement("div", { id: "flower" }), React.createElement("div", { id: "flower2" }))), React.createElement("div", { className: "row text" }, React.createElement("div", { className: "col-xs-12" }, React.createElement("h2", { className: "title" }, " Meta4s till Tuesday:"), React.createElement("h2", null, " 1) "), React.createElement("h2", null, " The brain is a forest of flowers. For best results: add water, nutrients, air, sunlight, love, and affection. Then watch it bloom. "))));
+        return React.createElement("div", { id: "landing" }, React.createElement("div", { className: "row drawings" }, React.createElement("div", { className: "col-xs-12" }, React.createElement("div", { id: "flower" }), React.createElement("div", { id: "flower2" }), React.createElement("div", { id: "new" }))), React.createElement("div", { className: "row text" }, React.createElement("div", { className: "col-xs-12" }, React.createElement("h2", { className: "title" }, " Meta4s till Tuesday:"), React.createElement("h2", null, " 1) "), React.createElement("h2", null, " The brain is a forest of flowers. For best results: add water, nutrients, air, sunlight, love, and affection. Then watch it bloom. "))));
     }
 });
 
