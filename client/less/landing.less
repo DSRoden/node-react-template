@@ -12,7 +12,7 @@
 // bootstrap
 
 body {
-	background-color: white;
+	background-color: @blue;
 }
 @media (max-width: 414px) {
     @heroHeight: 400px;
@@ -35,8 +35,14 @@ body {
 	bottom: 0;
 }
 
-#dateForm {
-	.flower {
+#landing {
+	.drawings {
+		position: absolute;
+		top: 15%;
+		left: 0;
+		right: 0;
+	}
+	#flower {
 		position: absolute;
 		top: 35%;
 		display: block;
@@ -50,30 +56,47 @@ body {
 		background-size: contain;
 		background-repeat: no-repeat;
 	}
-	.cant-wait {
+	#flower2 {
 		position: absolute;
-		text-align: center;
-		color: white;
-		top: 40%;
-		left: 0;
-		right: 0;
-		font-family: Helvetica;
-		font-weight: bold;
-		max-width: 300px;
+		top: 35%;
 		display: block;
 		margin-left: auto;
 		margin-right: auto;
-	}
-	.cant-wait::before{
-		position: absolute;
-		left: -40px;
+		left: -20px;
+		right: 0;
 		height: 50px;
 		width: 50px;
-		background-image: url('../assets/flower.png');
+		background-image: url('../assets/flower2.png');
 		background-size: contain;
 		background-repeat: no-repeat;
+	}
+	.text {
+		position: absolute ! important;
+		top: 20%;
+		left: 0;
+		right: 0;
+		max-width: 400px;
+		display: block;
+		margin-left: auto !important;
+		margin-right: auto !important;
+		font-style: italic;
 
 	}
+	h2 {
+		color: white;
+		font-size: 40px;
+		font-family: 'Helvetica', sans-serif;
+		text-align: center;
+	}
+	.title {
+    	font-weight: bold;
+    	font-style: normal;
+	}
+}
+
+
+#dateForm {
+	
 	.meeting-details {
 		margin-top: 60px;
 		text-align: center;
