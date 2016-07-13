@@ -9,7 +9,21 @@ var Geosuggest = require('react-geosuggest').default;
 var Send = require('../models/send').Send;
 
 
-var Landing = React.createClass({
+var HumboldtNature = React.createClass({
+    render: function() {
+    return (
+            <div id="humboldt">
+                <div className="row humboldt-text">
+                    <div className="col-xs-12">
+                        <h1> Denn das Ungemessene, ja selbst das Schreckliche in der Natur, alles was unsere Fassungskraft übersteigt, wird in einer romantischen Gegend zur Quelle des Genusses. Die Phantasie übt dann das freie Spiel ihrer Schöpfungen an dem, was von den Sinnen nicht vollständig erreicht werden kann; ihr Wirken nimmt eine andere Richtung bei jedem Wechsel in der Gemüthsstimmung des Beobachters. Getäuscht, glauben wir von der Außenwelt zu empfangen, was wir selbst in diese gelegt haben. </h1>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+});
+
+var BrainForest = React.createClass({
     render: function() {
     return (
             <div id="landing">
@@ -152,7 +166,7 @@ AppDispatcher.on(AppConstants.LANDING_PAGE, function(){
     var main = document.querySelector("main");
     ReactDOM.unmountComponentAtNode(main);
     // ReactDOM.render(<DateAndPlaceForm />, main);
-    ReactDOM.render(<Landing />, main);
+    ReactDOM.render(<HumboldtNature />, main);
 
 });
 

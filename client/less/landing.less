@@ -12,7 +12,9 @@
 // bootstrap
 
 body {
-	background-color: @blue;
+	// background-color: @blue;
+	background-image: url("../assets/pixel_tile.png");
+	background-repeat: repeat;
 }
 @media (max-width: 414px) {
     @heroHeight: 400px;
@@ -33,6 +35,25 @@ body {
 	z-index: -1;
 	top: 0;
 	bottom: 0;
+}
+
+#humboldt {
+	.humboldt-text {
+		position: absolute ! important;
+		top: 5%;
+		left: 0;
+		right: 0;
+		max-width: 400px;
+		display: block;
+		margin-left: auto !important;
+		margin-right: auto !important;
+		text-align: center;
+		font-weight: 700;
+		font-family: 'Gill Sans';
+		font-size: 40px !important;
+		text-shadow: 2px 2px #ccc;
+		margin-bottom: 50px;
+	}
 }
 
 #landing {
