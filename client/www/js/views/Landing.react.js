@@ -15,7 +15,7 @@ var HumboldtNature = React.createClass({
             <div id="humboldt">
                 <div className="row humboldt-text">
                     <div className="col-xs-12">
-                        <h1> Denn das Ungemessene, ja selbst das Schreckliche in der Natur, alles was unsere Fassungskraft übersteigt, wird in einer romantischen Gegend zur Quelle des Genusses. Die Phantasie übt dann das freie Spiel ihrer Schöpfungen an dem, was von den Sinnen nicht vollständig erreicht werden kann; ihr Wirken nimmt eine andere Richtung bei jedem Wechsel in der Gemüthsstimmung des Beobachters. Getäuscht, glauben wir von der Außenwelt zu empfangen, was wir selbst in diese gelegt haben. </h1>
+                        <h1> Denn das Ungemessene, ja selbst das Schreckliche in der Natur, alles was unsere Fassungskraft übersteigt, wird in einer romantischen Gegend zur Quelle des Genusses. Die Phantasie übt dann das freie Spiel ihrer Schöpfungen an dem, was von den Sinnen nicht vollständig erreicht werden kann; ihr Wirken nimmt eine andere Richtung bei jedem Wechsel in der Gemüthsstimmung des Beobachters.  </h1>
                     </div>
                 </div>
             </div>
