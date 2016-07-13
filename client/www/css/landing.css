@@ -1,6 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Biryani);
 body {
-  background-color: white;
+  background-color: #1385e5;
 }
 .row {
   margin-right: -15px ! important;
@@ -16,7 +16,13 @@ body {
   top: 0;
   bottom: 0;
 }
-#dateForm .flower {
+#landing .drawings {
+  position: absolute;
+  top: 15%;
+  left: 0;
+  right: 0;
+}
+#landing #flower {
   position: absolute;
   top: 35%;
   display: block;
@@ -30,28 +36,40 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
 }
-#dateForm .cant-wait {
+#landing #flower2 {
   position: absolute;
-  text-align: center;
-  color: white;
-  top: 40%;
-  left: 0;
-  right: 0;
-  font-family: Helvetica;
-  font-weight: bold;
-  max-width: 300px;
+  top: 35%;
   display: block;
   margin-left: auto;
   margin-right: auto;
-}
-#dateForm .cant-wait::before {
-  position: absolute;
-  left: -40px;
+  left: -20px;
+  right: 0;
   height: 50px;
   width: 50px;
-  background-image: url('../assets/flower.png');
+  background-image: url('../assets/flower2.png');
   background-size: contain;
   background-repeat: no-repeat;
+}
+#landing .text {
+  position: absolute ! important;
+  top: 20%;
+  left: 0;
+  right: 0;
+  max-width: 400px;
+  display: block;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  font-style: italic;
+}
+#landing h2 {
+  color: white;
+  font-size: 40px;
+  font-family: 'Helvetica', sans-serif;
+  text-align: center;
+}
+#landing .title {
+  font-weight: bold;
+  font-style: normal;
 }
 #dateForm .meeting-details {
   margin-top: 60px;

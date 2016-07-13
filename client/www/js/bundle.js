@@ -165,8 +165,16 @@ var InputMoment = require('input-moment');
 var Geosuggest = require('react-geosuggest').default;
 var Send = require('../models/send').Send;
 
-var LandingPage = React.createClass({
-    displayName: "LandingPage",
+var Landing = React.createClass({
+    displayName: "Landing",
+
+    render: function render() {
+        return React.createElement("div", { id: "landing" }, React.createElement("div", { className: "row drawings" }, React.createElement("div", { className: "col-xs-12" }, React.createElement("div", { id: "flower" }), React.createElement("div", { id: "flower2" }), React.createElement("div", { id: "new" }))), React.createElement("div", { className: "row text" }, React.createElement("div", { className: "col-xs-12" }, React.createElement("h2", null, " The brain is a forest of flowers. For best results: add water, nutrients, air, sunlight, love, and affection. Then watch it bloom. "))));
+    }
+});
+
+var DateAndPlaceForm = React.createClass({
+    displayName: "DateAndPlaceForm",
     getInitialState: function getInitialState() {
         return {
             m: moment(),
@@ -211,7 +219,7 @@ var LandingPage = React.createClass({
         Send.sendMessage(message);
     },
     render: function render() {
-        return React.createElement("div", { id: "dateForm" }, React.createElement("div", { id: "send", style: { 'display': 'none' } }, React.createElement("div", { className: "row meeting-details" }, React.createElement("div", { className: "col-xs-12" }, React.createElement("div", null, " Place: ", this.state.location, " "), React.createElement("div", null, " Time: ", this.state.time, " "))), React.createElement("div", { className: "row" }, React.createElement("div", { className: "col-xs-12" }, React.createElement("textarea", { autofocus: true, className: "message", cols: "50", rows: "10", ref: "message", placeholder: "Leave a metaphor!" }))), React.createElement("div", { className: "row" }, React.createElement("div", { className: "col-sm-4" }), React.createElement("div", { className: "col-xs-12 col-sm-4" }, React.createElement("div", { className: "row" }, React.createElement("div", { className: "col-xs-6" }, React.createElement("div", { className: "cancel-btn", onClick: this.clear }, " Cancel :( ")), React.createElement("div", { className: "col-xs-6" }, React.createElement("div", { className: "send-btn", onClick: this.send }, " Send :) ")))), React.createElement("div", { className: "col-sm-4" }))), React.createElement("div", { id: "fill" }, React.createElement("div", null, React.createElement("div", { className: "container-fluid greeting" }, React.createElement("div", null, " Can I see you again? "))), React.createElement("div", null, React.createElement("div", { className: "row" }, React.createElement("div", { className: "col-xs-12 where" }, " Where? "))), React.createElement("div", { className: "geosuggest-input" }, React.createElement(Geosuggest, {
+        return React.createElement("div", { id: "dateForm" }, React.createElement("div", { id: "send", style: { 'display': 'none' } }, React.createElement("div", { className: "row meeting-details" }, React.createElement("div", { className: "col-xs-12" }, React.createElement("div", null, " Place: ", this.state.location, " "), React.createElement("div", null, " Time: ", this.state.time, " "))), React.createElement("div", { className: "row" }, React.createElement("div", { className: "col-xs-12" }, React.createElement("textarea", { autofocus: true, className: "message", cols: "50", rows: "10", ref: "message", placeholder: "Leave a metaphor!" }))), React.createElement("div", { className: "row" }, React.createElement("div", { className: "col-sm-4" }), React.createElement("div", { className: "col-xs-12 col-sm-4" }, React.createElement("div", { className: "row" }, React.createElement("div", { className: "col-xs-6" }, React.createElement("div", { className: "cancel-btn", onClick: this.clear }, " Cancel :( ")), React.createElement("div", { className: "col-xs-6" }, React.createElement("div", { className: "send-btn", onClick: this.send }, " Send :) ")))), React.createElement("div", { className: "col-sm-4" }))), React.createElement("div", { id: "fill", style: { 'display': 'none' } }, React.createElement("div", null, React.createElement("div", { className: "container-fluid greeting" }, React.createElement("div", null, " Can I see you again? "))), React.createElement("div", null, React.createElement("div", { className: "row" }, React.createElement("div", { className: "col-xs-12 where" }, " Where? "))), React.createElement("div", { className: "geosuggest-input" }, React.createElement(Geosuggest, {
             onSuggestSelect: this.onSuggestSelect,
             onFocus: this.onFocus,
             onBlur: this.onBlur,
@@ -231,7 +239,8 @@ var LandingPage = React.createClass({
 AppDispatcher.on(AppConstants.LANDING_PAGE, function () {
     var main = document.querySelector("main");
     ReactDOM.unmountComponentAtNode(main);
-    ReactDOM.render(React.createElement(LandingPage, null), main);
+    // ReactDOM.render(<DateAndPlaceForm />, main);
+    ReactDOM.render(React.createElement(Landing, null), main);
 });
 
 },{"../constants":2,"../dispatcher":4,"../models/send":6,"../utils":8,"input-moment":14,"moment":32,"react":196,"react-dom":33,"react-geosuggest":34}],11:[function(require,module,exports){

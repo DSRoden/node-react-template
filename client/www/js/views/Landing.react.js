@@ -8,7 +8,29 @@ var InputMoment = require('input-moment')
 var Geosuggest = require('react-geosuggest').default;
 var Send = require('../models/send').Send;
 
-var LandingPage = React.createClass({
+
+var Landing = React.createClass({
+    render: function() {
+    return (
+            <div id="landing">
+                <div className="row drawings">
+                    <div className="col-xs-12">
+                        <div id="flower"></div>
+                        <div id="flower2"></div>
+                        <div id="new"></div>
+                    </div>
+                </div>
+                <div className="row text">
+                    <div className="col-xs-12">
+                        <h2> The brain is a forest of flowers. For best results: add water, nutrients, air, sunlight, love, and affection. Then watch it bloom. </h2>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+});
+
+var DateAndPlaceForm = React.createClass({
     getInitialState() {
         return {
           m: moment(),
@@ -81,7 +103,7 @@ var LandingPage = React.createClass({
                         <div className="col-sm-4"></div>
                     </div>
                 </div>
-                <div id="fill">
+                <div id="fill" style={{'display' : 'none'}}>
                    <div>
                     <div className="container-fluid greeting">
                         <div> Can I see you again? </div>
@@ -129,7 +151,9 @@ var LandingPage = React.createClass({
 AppDispatcher.on(AppConstants.LANDING_PAGE, function(){
     var main = document.querySelector("main");
     ReactDOM.unmountComponentAtNode(main);
-    ReactDOM.render(<LandingPage />, main);
+    // ReactDOM.render(<DateAndPlaceForm />, main);
+    ReactDOM.render(<Landing />, main);
+
 });
 
 
