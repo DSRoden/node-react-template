@@ -166,7 +166,7 @@ AppDispatcher.on(AppConstants.LANDING_PAGE, function(){
     var main = document.querySelector("main");
     ReactDOM.unmountComponentAtNode(main);
     // ReactDOM.render(<DateAndPlaceForm />, main);
-    ReactDOM.render(<HumboldtNature />, main);
+    ReactDOM.render(<BrainForest />, main);
 
 });
 
